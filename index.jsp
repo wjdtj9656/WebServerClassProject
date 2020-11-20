@@ -45,6 +45,7 @@
           <li><a href="#team">OUR TEAM</a></li>
           <li><a href="quizBoard.jsp">문제 게시판</a></li>
           <li><a href="normalBoard.jsp">커뮤니티</a></li>
+          <li><a href="signup.jsp">회원가입</a></li>
           <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
