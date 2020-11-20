@@ -41,7 +41,13 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.jsp">Home</a></li>
-          <li><a href="quizBoard.jsp">문제 게시판</a></li>
+          <li class="drop-down"><a href="">QUIZ</a>
+            <ul>
+              <li><a href="quizBoard.jsp">QUIZ 내기</a></li>
+              <li><a href="Quiz_list.jsp">QUIZ LIST</a></li>
+              <li><a href="Quiz_package.jsp">시험 보기</a></li>
+            </ul>
+          </li>
           <li><a href="normalBoard.jsp">커뮤니티</a></li>
           <li class="drop-down"><a href="">Drop Down</a>
             <ul>
@@ -73,7 +79,72 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
+<br>
+      <FORM METHOD="POST" NAME="Quiz_Create" ACTION="Quiz_Create.jsp" onSubmit="return checkInputForm()">
+       
+        <TABLE WIDTH="60%" ALIGN="CENTER" BORDER="1" cellspacing="0" bordercolordark="white" bordercolorlight="black">
+          <TR ALIGN="CENTER">
+            <TD COLSPAN="2" bgcolor="#00BFFF" ><font color="black">새로운 문제 만들기</font></TD>
+          </TR>
+          <TR ALIGN="CENTER">
+            <TD COLSPAN="2" bgcolor="#87CEFA"><font color="white">객관식 문제</font></TD>
+          </TR>
+          <TR ALIGN="CENTER">
+            <TD WIDTH="10%" >문제</TD>
+            <TD WIDTH="90%" ><INPUT TYPE="TEXT" NAME="new_quiz_obj" SIZE="50" MAXLENGTH="50"></TD>
+          </TR>
+          <TR ALIGN="CENTER">
+            
+          </TR>
+          <% for( int i = 1; i <= 4; i++){ %>
+          <TR ALIGN="CENTER">
+            <TD >
+              
+                <INPUT TYPE="RADIO" NAME="new_quiz_obj_check" VALUE="<%=i%>"
+                <%= (i == 1 ? "checked" : "")%>
+                <%=i%>
+              
+            </TD>
+              <TD >
+                
+                  <INPUT TYPE="TEXT" NAME="new_quiz_obj_ans" SIZE="50" MAXLENGTH="50">
+                
+              </TD>
+            </TR>
+        <% } %>
+          <TR ALIGN="CENTER">
+            <TD COLSPAN="2" bgcolor="#87CEFA">
+            <font color="white">주관식 문제</font>
+            </TD>
+          </TR>
+          <TR ALIGN="CENTER">
+            <TD >
+            문제</TD>
+            <TD >
+              <INPUT TYPE="TEXT" NAME="new_quiz_short" SIZE="50" MAXLENGTH="50">
+            </TD>
+          </TR>
+          <TR ALIGN="CENTER">
+            <TD >
+              정답</TD>
+            <TD COLSPAN="2" >
+              
+              <INPUT TYPE="TEXT" NAME="new_quiz_short_ans" SIZE="50" MAXLENGTH="50">
+            
+            </TD>
+          </TR>
+          <TR ALIGN="CENTER">
+            <TD COLSPAN=2 ALIGN="CENTER" >
+              
+              <input type="submit" value="New Quiz">&nbsp;&nbsp;&nbsp;
+              <input type="reset" value="Cancel">&nbsp;&nbsp;&nbsp;
+              <input type="button" value="List" onclick="document.location.href='Quiz_list.jsp'">
+                      
+            </TD>
+          </TR>
+        </TABLE>
+      </FORM>
+    </form>
 
   </main><!-- End #main -->
 

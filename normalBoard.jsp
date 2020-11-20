@@ -41,7 +41,13 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.jsp">Home</a></li>
-          <li><a href="quizBoard.jsp">문제 게시판</a></li>
+          <li class="drop-down"><a href="">QUIZ</a>
+            <ul>
+              <li><a href="quizBoard.jsp">QUIZ 내기</a></li>
+              <li><a href="Quiz_list.jsp">QUIZ LIST</a></li>
+              <li><a href="Quiz_package.jsp">시험 보기</a></li>
+            </ul>
+          </li>
           <li><a href="normalBoard.jsp">커뮤니티</a></li>
           <li class="drop-down"><a href="">Drop Down</a>
             <ul>
