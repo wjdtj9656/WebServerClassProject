@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+  <!-- ======= naviation ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/">퀴즈내봐<span>.</span></a></h1>
+ <%
+ 	Object userId = session.getAttribute("userId");
+ %>
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#team">OUR TEAM</a></li>
+          <li><a href="quizBoard.jsp">문제 게시판</a></li>
+          <li><a href="normalBoard.jsp">커뮤니티</a></li>
+          <c:choose>
+	          <c:when test="${not empty userId}">
+		          <li><a href="/user/logout">로그아웃</a></li>
+		          <li><a href="/user/updateform">회원정보</a></li>
+		      </c:when>
+		      <c:otherwise>
+		          <li><a href="/signup.jsp">회원가입</a></li>
+		          <li><a href="/login.jsp">로그인</a></li>
+	          </c:otherwise>
+          </c:choose>
+          
+          
+          <li class="drop-down"><a href="">Drop Down</a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li>          
+          <li><a href="#footer">contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header><!-- End Header -->
