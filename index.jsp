@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html lang="en">
 
 <head>
@@ -11,8 +13,7 @@
 
 
   <!-- ======= naviation ======= -->
-  <%@include file="/commons/nav.jspf" %>
-
+<%@include file="/commons/nav.jspf" %>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
@@ -230,6 +231,8 @@
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<%@include file="/commons/js.jspf" %>
 
 </body>
 

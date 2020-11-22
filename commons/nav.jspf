@@ -8,16 +8,14 @@
     <div class="container d-flex align-items-center">
 
       <h1 class="logo mr-auto"><a href="/">퀴즈내봐<span>.</span></a></h1>
- <%
- 	Object userId = session.getAttribute("userId");
- %>
+
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="/">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#team">OUR TEAM</a></li>
-          <li><a href="quizBoard.jsp">문제 게시판</a></li>
-          <li><a href="normalBoard.jsp">커뮤니티</a></li>
+          <li><a href="/quizBoard.jsp">문제 게시판</a></li>
+          <li><a href="/normalBoard.jsp">커뮤니티</a></li>
           <c:choose>
 	          <c:when test="${not empty userId}">
 		          <li><a href="/user/logout">로그아웃</a></li>
