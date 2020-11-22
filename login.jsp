@@ -50,7 +50,7 @@
 
   </section>
   </main><!-- End #main -->
-
+<%@include file="/commons/js.jspf" %>
 </body>
 
 </html>
