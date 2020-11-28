@@ -170,6 +170,7 @@ try{
 	try{ 
 		
 		try{
+			System.out.println(stmt);
 			sql = "SELECT * FROM " + tableName_Manager + " WHERE userId='" + quiz_User ;
 			sql = sql +"' ORDER BY quiz_name ASC;";
 			result = stmt.executeQuery( sql );

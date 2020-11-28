@@ -1,17 +1,18 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <%@ page import = "java.sql.*" %>
 <%
-String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTCf";
+request.setCharacterEncoding("euc-kr");
+String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
 
-// DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
+//DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
- 
+
 
 String DB_USER = "root";
 
 String DB_PASSWORD= "wjdtj1";
 
-// DB ID/PASSWORD
+//DB ID/PASSWORD
 Connection conn = null;
 
 Statement stmt = null;
@@ -19,31 +20,32 @@ Statement stmt = null;
 
 try {
 
-    Class.forName("com.mysql.jdbc.Driver");
-  
-    // Load JDBC Class
-  
-   
-  
-    conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-  
-    // Make Connection
-  
-   
-  
-    stmt = conn.createStatement();
-  
+Class.forName("com.mysql.jdbc.Driver");
+
+// Load JDBC Class
 
 
-   }
-  
-   catch(Exception e){
-  
-    out.print("Exception Error...");
-  
-    out.print(e.toString());
-  
-   }  
+
+conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+
+// Make Connection
+
+
+
+stmt = conn.createStatement();
+
+
+
+}
+
+catch(Exception e){
+
+out.print("Exception Error...");
+
+out.print(e.toString());
+
+}  
+
 String quiz_User = request.getParameter("quiz_User");
 String memId = null;
 try{
@@ -83,7 +85,7 @@ String new_quiz_short_ans = request.getParameter("new_quiz_short_ans");
 			sql = sql + new_quiz_obj_ans[0] + "','";
 			sql = sql + new_quiz_obj_ans[1] + "','";
 			sql = sql + new_quiz_obj_ans[2] + "','";
-            sql = sql + new_quiz_obj_ans[3] + " '); ";
+            sql = sql + new_quiz_obj_ans[3] + "'); ";
             stmt.executeUpdate(sql);
 		}
 	}catch(Exception e){
@@ -93,23 +95,18 @@ String new_quiz_short_ans = request.getParameter("new_quiz_short_ans");
     try{
 		if( new_quiz_short != null && new_quiz_short_ans != null && !new_quiz_short.equals("")
 			&& !new_quiz_short_ans.equals("") ){
-            sql = "INSERT INTO " + table_short + "(userId,quiz_short, quiz_short_ans) VALUES ('";
+            sql = "INSERT INTO " + table_short + "(userId, quiz_short, quiz_short_ans) VALUES ('";
 			
             sql = sql + memId +"','";
 			sql = sql + new_quiz_short + "','";
-			sql = sql + new_quiz_short_ans + " ');";
+			sql = sql + new_quiz_short_ans + "');";
 			stmt.executeUpdate(sql);
 		}
+			
+		
 	}catch(Exception e){
-		System.out.println(e.toString());
+		System.out.println(e.toString()+"haz");
     }
     
-    try{
-        
-    conn.close();
-		stmt.close();
-	}catch(Exception e){};
-    stmt = null;
-    conn = null;
 	response.sendRedirect("quizBoard.jsp?quiz_User=" + quiz_User);
 %>
