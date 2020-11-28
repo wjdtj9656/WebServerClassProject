@@ -13,7 +13,7 @@
 
 
   <!-- ======= naviation ======= -->
-<%@include file="/commons/nav.jspf" %>
+  <%@include file="/commons/nav.jspf" %>
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
