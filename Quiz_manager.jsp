@@ -76,7 +76,7 @@ try {
 		sql = "INSERT INTO " + table_Name + "(userId, quiz_name, quiz_form_code) VALUES ('";
 		sql = sql + memId +         "','";
 		sql = sql + quiz_Name +   "','";
-		sql = sql + quiz_Code +    " ') ";
+		sql = sql + quiz_Code +    "') ";
 		stmt.executeUpdate( sql );		
 	}
 

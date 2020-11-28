@@ -333,6 +333,7 @@ try {
 				<TD ALIGN="CENTER" COLSPAN="2" bgcolor="#87CEFA" >
 					<input type="button" value="quiz list" onclick="document.location.href='Quiz_list.jsp?quiz_User=<%=quiz_User%>'">
 					<input type="button" value="test list" onclick="document.location.href='Quiz_package.jsp?quiz_User=<%=quiz_User%>'">
+
 				</TD>
 			</TR>
 	</TABLE>

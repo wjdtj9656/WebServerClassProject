@@ -53,7 +53,8 @@ try {
 		memId = ((String)session.getAttribute("userId")).trim();
 	}catch(Exception e){}
 	
-	String quiz_Name = null;
+
+	String quiz_Name = request.getParameter("quiz_name");
 	String quiz_Code = request.getParameter("quiz_Code");
 	String sql = null;
 

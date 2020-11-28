@@ -58,8 +58,8 @@ try {
 	try{
 		memId = ((String)session.getAttribute("userId")).trim();
 	}catch(Exception e){}
-	String table_Manager = "quiz_Manager";
-	String table_Form = "quiz_Form";
+	String table_Manager = "quiz_scrap_Manager";
+	String table_Form = "quiz_scrap_test";
 	String sql = null;
 	
 	
