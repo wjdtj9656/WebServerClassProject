@@ -1,12 +1,41 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
-</head>
-<body>
+  <footer id="footer">
 
-</body>
-</html>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>퀴즈내봐<span>.</span></h3>
+            <p>
+              서울과학기술대학교<br>
+              웹서버 프로그래밍<br>
+              7팀 프로젝트<br><br>
+              <strong>Phone:</strong> 010-3881-9667<br>
+              <strong>Email:</strong> wjdtj9656@gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>도움되는 링크</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="main.jsp">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">문제 게시판</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">커뮤니티</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">여분</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>웹서버플밍 7팀</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
