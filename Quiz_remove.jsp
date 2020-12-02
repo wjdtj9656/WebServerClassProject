@@ -5,6 +5,8 @@ String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC"
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=UTF-8");
  
 
 String DB_USER = "root";
@@ -46,7 +48,6 @@ try {
    }  
 	ResultSet result = null;
 
-	request.setCharacterEncoding("euc-kr");
 	
 
 

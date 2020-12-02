@@ -2,6 +2,10 @@
 <%@ page import = "java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=UTF-8");
+
 String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
@@ -65,8 +69,6 @@ try {
 
 
 	
-	   request.setCharacterEncoding("UTF-8");
-	   response.setContentType("text/html; charset=UTF-8");
 %>
 <!DOCTYPE html>
 <html lang="en">

@@ -49,14 +49,6 @@
             </ul>
           </li>
           <li><a href="normalBoard.jsp">커뮤니티</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
           
           <li><a href="#footer">contact</a></li>          
         </ul>

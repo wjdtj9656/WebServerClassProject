@@ -18,8 +18,8 @@
           <li><a href="/bbs.jsp">커뮤니티</a></li>
           <c:choose>
 	          <c:when test="${not empty userId}">
-		          <li><a href="/user/logout">로그아웃</a></li>
-		          <li><a href="/user/updateform">회원정보</a></li>
+		          <li><a href="/user/logout"><font color="blue">로그아웃</font></a></li>
+		          <li><a href="/user/updateform"><font color="blue">회원정보</font></a></li>
 		      </c:when>
 		      <c:otherwise>
 		          <li><a href="/signup.jsp">회원가입</a></li>
@@ -28,14 +28,7 @@
           </c:choose>
           
           
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>          
+               
           <li><a href="#footer">contact</a></li>
         </ul>
       </nav>

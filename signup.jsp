@@ -51,6 +51,8 @@
   </section>
   </main><!-- End #main -->
   <%@include file="/commons/js.jspf" %>
+  
+  <%@include file="/commons/footer.jspf" %>
 </body>
 
 </html>
