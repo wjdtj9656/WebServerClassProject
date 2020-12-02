@@ -37,7 +37,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
-              <h4 class="title"><a href="">회원가입 하기</a></h4>
+              <h4 class="title"><a href="signup.jsp">회원가입 하기</a></h4>
               <p class="description">처음이라면 회원가입을 해주세요!</p>
             </div>
           </div>
@@ -45,7 +45,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">문제 공유</a></h4>
+              <h4 class="title"><a href="bbs.jsp">문제 공유</a></h4>
               <p class="description">자신이 만든 문제를 공유 해보세요"</p>
             </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4 class="title"><a href="">문제풀기</a></h4>
+              <h4 class="title"><a href="quizBoard.jsp">문제풀기</a></h4>
               <p class="description">자신이 만든 문제 OR 타인이 만든 퀴즈를 풀어보세요.</p>
             </div>
           </div>
