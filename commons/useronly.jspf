@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<<<<<<< HEAD
 			<c:choose>
 	          <c:when test="${not empty userId}">
 	          	
@@ -10,3 +11,13 @@
 	          <% response.sendRedirect("/login.jsp"); %>
 	          </c:otherwise>
 	          </c:choose>
+=======
+          <c:choose>
+	          <c:when test="${not empty userId}">
+
+		      </c:when>
+		      <c:otherwise>
+		      <% response.sendRedirect("/login.jsp"); %>
+	          </c:otherwise>
+          </c:choose>
+>>>>>>> c30c6105d5f54a74aa53df142d194621c8362dde
