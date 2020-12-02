@@ -22,8 +22,8 @@
 		          <li><a href="/user/updateform"><font color="blue">회원정보</font></a></li>
 		      </c:when>
 		      <c:otherwise>
-		          <li><a href="/signup.jsp">회원가입</a></li>
-		          <li><a href="/login.jsp">로그인</a></li>
+		          <li><a href="/signup.jsp"><font color="blue">회원가입</font></a></li>
+		          <li><a href="/login.jsp"><font color="blue">로그인</font></a></li>
 	          </c:otherwise>
           </c:choose>
           
