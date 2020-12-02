@@ -21,6 +21,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@include file="/commons/useronly.jspf" %>
 <%@include file="/commons/head.jspf" %>
 </head>
 

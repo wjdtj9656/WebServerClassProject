@@ -1,7 +1,7 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <%@ page import = "java.sql.*" %>
 <%
-String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
+String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
@@ -9,7 +9,7 @@ String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
 
 String DB_USER = "root";
 
-String DB_PASSWORD= "wjdtj1";
+String DB_PASSWORD= "Wjdtj12!";
 
 // DB ID/PASSWORD
 Connection conn = null;
@@ -58,8 +58,8 @@ try {
 	try{
 		memId = ((String)session.getAttribute("userId")).trim();
 	}catch(Exception e){}
-	String table_Manager = "quiz_Manager";
-	String table_Form = "quiz_Form";
+	String table_Manager = "quiz_manager";
+	String table_Form = "quiz_form";
 	String sql = null;
 	
 	

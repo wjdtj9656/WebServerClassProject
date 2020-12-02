@@ -2,15 +2,18 @@
 <%@ page import = "java.sql.*" %>
 
 <%
-String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
+String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
+
+   request.setCharacterEncoding("UTF-8");
+   response.setContentType("text/html; charset=UTF-8");
 
  
 
 String DB_USER = "root";
 
-String DB_PASSWORD= "wjdtj1";
+String DB_PASSWORD= "Wjdtj12!";
 
 // DB ID/PASSWORD
 Connection conn = null;
@@ -51,7 +54,7 @@ try {
 
 	String quiz_User = request.getParameter("quiz_User");
 	
-	String quiz_Name = request.getParameter("quiz_Name");
+	String quiz_Name = request.getParameter("quiz_name");
 	String quiz_Code = request.getParameter("quiz_Code");
 	String table_Name = null;
 	String quiz_Table_Name = null;
@@ -72,7 +75,7 @@ try {
 
 	if( trueable ) {
 		//퀴즈 매니저 테이블에 퀴즈의 이름과 코드 등록
-		table_Name = "quiz_Manager";
+		table_Name = "quiz_manager";
 		sql = "INSERT INTO " + table_Name + "(userId, quiz_name, quiz_form_code) VALUES ('";
 		sql = sql + memId +         "','";
 		sql = sql + quiz_Name +   "','";
@@ -81,7 +84,7 @@ try {
 	}
 
 	// 코드에 맞는 퀴즈 등록(객관식)
-	table_Name = "quiz_Form";
+	table_Name = "quiz_form";
 	quiz_Table_Name = "quiz_obj";
 
 	try{
@@ -113,7 +116,7 @@ try {
 		
 	}catch(Exception e){}
 	// 코드에 맞는 퀴즈 등록(주관식)
-	table_Name = "quiz_Form";
+	table_Name = "quiz_form";
 	quiz_Table_Name = "quiz_short";
 
 	try{

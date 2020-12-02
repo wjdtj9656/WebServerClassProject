@@ -12,6 +12,7 @@
 <html>
 <head>
 	<%@include file="/commons/head.jspf" %>
+	<%@include file="/commons/useronly.jspf" %>
 </head>
 <body>
 	<%@include file="/commons/useronly.jspf" %>

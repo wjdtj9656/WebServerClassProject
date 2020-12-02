@@ -2,7 +2,7 @@
 <%@ page import = "java.sql.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
+String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
@@ -10,7 +10,7 @@ String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
 
 String DB_USER = "root";
 
-String DB_PASSWORD= "wjdtj1";
+String DB_PASSWORD= "Wjdtj12!";
 
 // DB ID/PASSWORD
 Connection conn = null;
@@ -58,13 +58,15 @@ try {
 		memId = ((String)session.getAttribute("userId")).trim();
 	}catch(Exception e){}
 	
-	String tableName_Manager = "quiz_Manager";
+	String tableName_Manager = "quiz_manager";
 	String tableName_short = "quiz_short";
 	String tableName_obj = "quiz_obj";
-	String tableScrap = "quiz_Scrap";
+	String tableScrap = "quiz_scrap";
 
 
-	request.setCharacterEncoding("euc-kr");
+	
+	   request.setCharacterEncoding("UTF-8");
+	   response.setContentType("text/html; charset=UTF-8");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -289,12 +291,12 @@ try {
                
 			while( result.next() ){
 				number = result.getString("quiz_id");
-				if ( result.getString("quiz_Scrap.userId").equals(memId) ){
+				if ( result.getString("quiz_scrap.userId").equals(memId) ){
 %>
                 <TR ALIGN="LEFT">
                 <TD WIDTH="10%" ALIGN="CENTER" >
 					
-						<% if ( result.getString("quiz_Scrap.userId").equals(memId) ){ %>
+						<% if ( result.getString("quiz_scrap.userId").equals(memId) ){ %>
 						<INPUT TYPE="checkbox" name="quiz_Scrap_obj" VALUE="<%=number%>">
 						<% } %>
 						&nbsp;<%=number%>
@@ -307,7 +309,7 @@ try {
                         
                     </TD>
                     <TD WIDTH="10%" ALIGN="CENTER">
-                    <% if( result.getString("quiz_Scrap.userId").equals(memId) || result.getString("quiz_obj.userId").equals(memId) ){ %>					
+                    <% if( result.getString("quiz_scrap.userId").equals(memId) || result.getString("quiz_obj.userId").equals(memId) ){ %>					
                       <% url="Quiz_remove.jsp?quiz_Table=quiz_obj&number=" + number+"&quiz_User="+quiz_User; %>
                       <input type="button" value="delete" onclick="document.location.href='<%=url%>'">
                       <% }else if( memId != null ){ %>
@@ -361,12 +363,12 @@ try {
     			while( result.next() ){ 
     
                     number = result.getString("quiz_id");
-                    if ( result.getString("quiz_Scrap.userId").equals(memId)){
+                    if ( result.getString("quiz_scrap.userId").equals(memId)){
                       %>
             <TR ALIGN="LEFT">
             <TD WIDTH="10%" ALIGN="CENTER" >
 				
-					<% if ( result.getString("quiz_Scrap.userId").equals(memId) ){ %>
+					<% if ( result.getString("quiz_scrap.userId").equals(memId) ){ %>
 					<INPUT TYPE="checkbox" name="quiz_Scrap_short" VALUE="<%=number%>">
 					<% } %>
 					&nbsp;<%=number%>
@@ -381,11 +383,11 @@ try {
                     
                 </TD>
                 <TD WIDTH="10%" ALIGN="CENTER">
-				<% if( result.getString("quiz_Scrap.userId").equals(memId) || result.getString("quiz_short.userId").equals(memId) ){ %>
+				<% if( result.getString("quiz_scrap.userId").equals(memId) || result.getString("quiz_short.userId").equals(memId) ){ %>
 				<% url="Quiz_remove.jsp?quiz_Table=quiz_Scrap_short&number=" + number+"&quiz_User=" + quiz_User; %>
 				<input type="button" value="delete" onclick="document.location.href='<%=url%>'">
 				<% }else if( memId != null ){ %>
-				<% url="Quiz_Scrap.jsp?quiz_Table=quiz_short&number=" + number+"&quiz_User=" + quiz_User; %>
+				<% url="Quiz_scrap.jsp?quiz_Table=quiz_short&number=" + number+"&quiz_User=" + quiz_User; %>
 				<input type="button" value="scrap" onclick="document.location.href='<%=url%>'">
 				<% }else{ %> &nbsp <% } %>
 			</TD>
@@ -406,7 +408,7 @@ try {
                 <TD width="100%" COLSPAN="3" ALIGN="CENTER" >
                      
                         TestName 
-                        <INPUT TYPE="TEXT" NAME="quiz_Name" SIZE="15">&nbsp;&nbsp;&nbsp;
+                        <INPUT TYPE="TEXT" NAME="quiz_name" SIZE="15">&nbsp;&nbsp;&nbsp;
                          Code
                         <INPUT TYPE="TEXT" NAME="quiz_Code" SIZE="15">&nbsp;&nbsp;&nbsp;
                         

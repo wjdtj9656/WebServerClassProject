@@ -2,7 +2,11 @@
 <%@ page import = "java.sql.*" %>
 
 <%
-String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=UTF-8");
+
+String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
@@ -10,7 +14,7 @@ String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
 
 String DB_USER = "root";
 
-String DB_PASSWORD= "wjdtj1";
+String DB_PASSWORD= "Wjdtj12!";
 
 // DB ID/PASSWORD
 Connection conn = null;
@@ -71,7 +75,6 @@ try {
 	int count_obj = 0;
 	int count_T = 0; //문제의번호
 
-	request.setCharacterEncoding("euc-kr");	
 	
 
 	try{
@@ -80,9 +83,7 @@ try {
 		result = stmt.executeQuery( sql );
 		result.next();
 		quiz_Name = result.getString("quiz_name");
-		if( !result.getString("userId").equals(memId) ){
-
-		}
+		
 	}catch(Exception e){
 		System.out.println( e.toString() );
 	}
@@ -262,7 +263,7 @@ try {
 				short quiz
 			</TD>
 		</TR>
-<%
+<%		
 
 	try{
 
@@ -271,6 +272,7 @@ try {
 		sql = sql + " WHERE quiz_form_code = '" + quiz_Code + "' AND quiz_table = " ;
 		sql = sql + " '" + tableName_short + "' and " + tableName_QuizForm + ".userId = '" +  quiz_User + "';";
 		result = stmt.executeQuery( sql );
+		System.out.println(sql);
 	}catch(Exception e){
 	}
 

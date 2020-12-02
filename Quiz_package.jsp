@@ -9,8 +9,11 @@ A:hover  {color:#9966CC;text-decoration:none; }
 
 
 <%
-	request.setCharacterEncoding("euc-kr");
-    String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=UTF-8");
+
+    String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 // DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
@@ -18,7 +21,7 @@ A:hover  {color:#9966CC;text-decoration:none; }
 
 String DB_USER = "root";
 
-String DB_PASSWORD= "wjdtj1";
+String DB_PASSWORD= "Wjdtj12!";
 
 // DB ID/PASSWORD
 Connection conn = null;
@@ -64,11 +67,11 @@ try{
 
 	String sql = null;
 
-	String tableName_Manager = "quiz_Manager";
+	String tableName_Manager = "quiz_manager";
 	//String tableName_scrap = "quiz_manager";
 	//String tableScrap = "quiz_Scrap_test";
 
-	String tableName_scrap = "quiz_Scrap_test";
+	String tableName_scrap = "quiz_scrap_test";
 	String tableScrap = "quiz_scrap_manager";
 	String url = null;
 	
@@ -197,10 +200,7 @@ try{
 				<% url="Quiz_package_remove.jsp?quiz_Code=" + result.getString("quiz_form_code"); 
 					url=url + "&quiz_User=" + quiz_User; %>
 				<input type="button" value="delete" onclick="document.location.href='<%=url%>'">
-				<% }else if( memId != null ){ %>
-					<% url="Quiz_scrap_test.jsp?quiz_Code=" + result.getString("quiz_form_code");
-					url=url + "&quiz_name=" + result.getString("quiz_name") + "&quiz_User=" + quiz_User; %>
-					<input type="button" value="scrap!" onclick="document.location.href='<%=url%>'">
+				
 				<% }else{ %> &nbsp; <% } %>
 			</TD>
 		</TR>
@@ -208,49 +208,7 @@ try{
 		
 	}catch(Exception e){}
 %>
-<TR>
-			<TD COLSPAN="3" ALIGN="CENTER" bgcolor="#87CEFA">
-				<font color="white">
-					quiz scrap package
-				</font>				
-			</TD>
-		</TR>
-<%	
-	try{ 
-		sql = "SELECT * FROM " + tableName_scrap + " INNER JOIN " + tableScrap ;
-		sql = sql + " ON " + tableName_scrap + ".quiz_name = " + tableScrap + ".quiz_name ";
-		sql = sql + " WHERE " + tableScrap + ".userId = '" + quiz_User + "' ";
-		sql = sql + " ORDER BY " + tableName_scrap + ".userId ASC;";
-		result = stmt.executeQuery( sql );
 
-		url = null;
-		while( result.next() ){ 
-			 if ( result.getString("quiz_Scrap_test.userId").equals(memId)){
-%>
-		<TR ALIGN="LEFT">
-			<TD WIDTH="75%" >									
-						&nbsp;&nbsp;package scrap test&nbsp;&nbsp;:&nbsp;				
-		<A HREF="Quiz_solve.jsp?quiz_User=<%=quiz_User%>&quiz_Code=<%=result.getString("quiz_form_code")%>&quiz_name=<%=result.getString("quiz_name")%>">
-					<span style="font-size:9pt;">		
-					<%=result.getString("userId")%>			
-						 <%=result.getString("quiz_name")%>
-						 
-                       (스크랩됨)
-					 </span>
-				</A>
-			</TD>
-			<TD WIDTH="10%"  ALIGN="CENTER">
-				<% if( memId!=null ){ %>
-				<% url="Quiz_package_scrap_remove.jsp?quiz_Code=" + result.getString("quiz_form_code"); 
-					url=url + "&quiz_User=" + quiz_User; %>
-				<input type="button" value="delete" onclick="document.location.href='<%=url%>'">
-				<%  }else{ %> &nbsp; <% } %>
-			</TD>
-		</TR>
-<%		}
-		}
-	}catch(Exception e){}
-%>
 		<TR ALIGN="CENTER">
 			<TD COLSPAN="3" ALIGN="CENTER" bgcolor="#87CEFA">		
 					<% url = "Quiz_list.jsp?quiz_User=" + quiz_User;  %>

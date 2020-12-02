@@ -9,6 +9,7 @@
 <html>
 <head>
 <%@include file="/commons/head.jspf" %>
+<%@include file="/commons/useronly.jspf" %>
 </head>
 
 

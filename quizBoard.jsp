@@ -1,12 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+   request.setCharacterEncoding("UTF-8");
+   response.setContentType("text/html; charset=UTF-8");
+%>
+<%@include file="/commons/useronly.jspf" %>
+<%
+
 
 	//String quiz_User = request.getParameter("quiz_User");
 
-	Object quiz_User = ((String)session.getAttribute("userId")).trim();
+    //Object quiz_User = ((String)session.getAttribute("userId")).trim();
+
 	String memId = null;
 	try{
 		memId = ((String)session.getAttribute("userId")).trim();
+		Object quiz_User=memId;
 	}catch(Exception e){
 	}
 %>
@@ -42,7 +50,6 @@
 <body>
 
 
-
   <!-- ======= naviation ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
@@ -55,8 +62,8 @@
           <li class="drop-down"><a href="">QUIZ</a>
             <ul>
               <li><a href="quizBoard.jsp">QUIZ 내기</a></li>
-              <li><a href="Quiz_list.jsp?quiz_User=<%=quiz_User%>">QUIZ LIST</a></li>
-              <li><a href="Quiz_package.jsp?quiz_User=<%=quiz_User%>">시험 보기</a></li>
+              <li><a href="Quiz_list.jsp?quiz_User=<%=memId%>">QUIZ LIST</a></li>
+              <li><a href="Quiz_package.jsp?quiz_User=<%=memId%>">시험 보기</a></li>
             </ul>
           </li>
           <li><a href="normalBoard.jsp">커뮤니티</a></li>
@@ -92,9 +99,9 @@
   <main id="main">
 <br>
 
-	<% if ( memId != null && memId.equals(quiz_User) ){ %>
+	<% if ( memId != null ){ %>
       <FORM METHOD="POST" NAME="Quiz_Create" ACTION="Quiz_Create.jsp" onSubmit="return checkInputForm()">
-       <input type="hidden" name="quiz_User" value="<%=quiz_User%>">
+       <input type="hidden" name="quiz_User" value="<%=memId%>">
         <TABLE WIDTH="60%" ALIGN="CENTER" BORDER="1" cellspacing="0" bordercolordark="white" bordercolorlight="black">
           <TR ALIGN="CENTER">
             <TD COLSPAN="2" bgcolor="#00BFFF" ><font color="black">새로운 문제 만들기</font></TD>
@@ -151,7 +158,7 @@
               
               <input type="submit" value="New Quiz">&nbsp;&nbsp;&nbsp;
               <input type="reset" value="Cancel">&nbsp;&nbsp;&nbsp;
-              <input type="button" value="List" onclick="document.location.href='Quiz_list.jsp?quiz_User=<%=quiz_User%>'">
+              <input type="button" value="List" onclick="document.location.href='Quiz_list.jsp?quiz_User=<%=memId%>'">
                       
             </TD>
           </TR>

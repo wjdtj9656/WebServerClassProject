@@ -1,8 +1,11 @@
 <%@ page contentType = "text/html; charset=euc-kr" %>
 <%@ page import = "java.sql.*" %>
 <%
-request.setCharacterEncoding("euc-kr");
-String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
+
+request.setCharacterEncoding("UTF-8");
+response.setContentType("text/html; charset=UTF-8");
+
+String DB_URL = "jdbc:mysql://118.67.129.53:3306/quizproject?serverTimezone=UTC";
 
 //DB URL Format = "jdbc:mysql://'DB IP':'Connector Port'/'DB_Name'";
 
@@ -10,7 +13,7 @@ String DB_URL = "jdbc:mysql://127.0.0.1:3307/quizproject?serverTimezone=UTC";
 
 String DB_USER = "root";
 
-String DB_PASSWORD= "wjdtj1";
+String DB_PASSWORD= "Wjdtj12!";
 
 //DB ID/PASSWORD
 Connection conn = null;
